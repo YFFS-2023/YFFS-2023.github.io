@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fdc9d1;
+    font-size: 12px;
+    overflow: auto
+}
+
+#mainDiv {
+    width: 100%;
+    height: 100%
+}
+
+#loveHeart {
+    float: left;
+    width: 670px;
+    height: 620px;
+    position: relative;
+}
+
+#garden {
+    width: 100%;
+    height: 100%
+}
+
+#errorMsg {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
+    left: 0
+}
