@@ -12,13 +12,21 @@ $(function () {
 	gardenCtx = gardenCanvas.getContext("2d");
 	gardenCtx.globalCompositeOperation = "lighter";
 	garden = new Garden(gardenCtx, gardenCanvas);
-	$("#content").css("width", $loveHeart.width());
-	$("#content").css("height", $loveHeart.height());
-	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2 - 50, 10));
+	$("#content").css("width", $loveHeart.width() + $("#code").width());
+	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
+	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2 + 20, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
+	
 	setInterval(function () {
 		garden.render()
 	}, Garden.options.growSpeed)
+});
+$(window).resize(function () {
+	var b = $(window).width();
+	var a = $(window).height();
+	if (b != clientWidth && a != clientHeight) {
+		location.replace(location)
+	}
 });
 
 function getHeartPoint(c) {
@@ -56,6 +64,70 @@ function startHeartAnimation() {
 	}, c)
 }
 
+(function (a) {
+	a.fn.typewriter = function () {
+		this.each(function () {
+			var d = a(this), c = d.html(), b = 0;
+			d.html("");
+			var e = setInterval(function () {
+				var f = c.substr(b, 1);
+				if (f == "<") {
+					b = c.indexOf(">", b) + 1
+				} else {
+					b++
+				}
+				d.html(c.substring(0, b) + (b & 1 ? "_" : ""));
+				if (b >= c.length) {
+					clearInterval(e)
+				}
+			}, 75)
+		});
+		return this
+	}
+})(jQuery);
 
+// time calculator
+function timeElapse(c) {
+	var Now_time = Date();
+	var Interval = (Date.parse(Now_time) - Date.parse(c)) / 1000;
+	var Days = Math.floor(Interval / (3600 * 24));
 
+	Interval = Interval % (3600 * 24);
+	var hour = Math.floor(Interval / 3600);
+	if (hour < 10) {
+		hour = "0" + hour
+	}
 
+	Interval = Interval % 3600;
+	var minute = Math.floor(Interval / 60);
+	if (minute < 10) {
+		minute = "0" + minute
+	}
+
+	Interval = Interval % 60;
+	if (Interval < 10) {
+		Interval = "0" + Interval
+	}
+
+	var duration = '<span class="digit">' + Days + '</span> days <span class="digit">' + 
+	hour + '</span> hours <span class="digit">' + 
+	minute + '</span> minutes <span class="digit">' + Interval + "</span> seconds";
+	$("#elapseClock").html(duration)
+}
+
+function showMessages() {
+	adjustWordsPosition();
+	$("#messages").fadeIn(5000, function () {
+		showLoveU()
+	})
+}
+
+function adjustWordsPosition() {
+	$("#words").css("position", "absolute");
+	$("#words").css("top", $("#garden").position().top + 195);
+	$("#words").css("left", $("#garden").position().left + 70)
+}
+
+function showLoveU() {
+	$("#loveu").fadeIn(500)
+};

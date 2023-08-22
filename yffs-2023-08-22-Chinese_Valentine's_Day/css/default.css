@@ -31,3 +31,124 @@ body {
     top: 100px;
     left: 0
 }
+
+#elapseClock {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+#words {
+    font-family: "sans-serif";
+    width: 500px;
+    font-size: 24px;
+    color: #666
+}
+
+#elapseClock .digit {
+    font-family: "digit";
+    font-size: 36px
+}
+
+#loveu {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 80px;
+    margin-right: 120px;
+    text-align: right;
+    display: none
+}
+
+#loveu .signature {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+#messages {
+    display: none
+}
+
+#frame {
+
+    position: absolute;
+    width: 300px;
+    height: 225px;
+    left: 5%;
+    top: 30%;
+}
+
+#frame2 {
+    position: absolute;
+    width: 300px;
+    height: 225px;
+    right: 5%;
+    top: 30%;
+}
+
+.heart {
+    position: absolute;
+    box-shadow: 0 0 40px #d5093c;
+    animation: beat .8s ease infinite normal;
+    background: linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
+}
+
+.left,
+.right {
+    top: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.left {
+
+
+    left: 26px;
+
+}
+
+.right {
+
+
+    right: 25px;
+    z-index: -1;
+}
+
+.bottom {
+
+
+    bottom: 26px;
+    left: 75px;
+    width: 151px;
+    height: 151px;
+    transform: rotate(45deg);
+    z-index: -1;
+
+}
+
+
+@keyframes beat {
+
+
+    0% {
+
+
+        transform: scale(1) rotate(225deg);
+        box-shadow: 0 0 40px #d5093c;
+    }
+
+    50% {
+
+
+        transform: scale(1.1) rotate(225deg);
+        box-shadow: 0 0 70px #d5093c;
+    }
+
+    100% {
+
+
+        transform: scale(1) rotate(225deg);
+        box-shadow: 0 0 40px #d5093c;
+        ;
+    }
+}
