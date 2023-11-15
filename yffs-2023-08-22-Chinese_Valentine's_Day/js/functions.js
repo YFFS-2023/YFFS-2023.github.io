@@ -1,4 +1,6 @@
-var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
+
+var $window = $(window),
+	gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 $(function () {
@@ -16,7 +18,7 @@ $(function () {
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2 + 20, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
-	
+
 	setInterval(function () {
 		garden.render()
 	}, Garden.options.growSpeed)
@@ -37,7 +39,7 @@ function getHeartPoint(c) {
 }
 
 function startHeartAnimation() {
-	var c = 40;  // The interval time between drawing each star
+	var c = 40; // The interval time between drawing each star
 	var d = 10;
 	var b = new Array();
 	var a = setInterval(function () {
@@ -67,7 +69,9 @@ function startHeartAnimation() {
 (function (a) {
 	a.fn.typewriter = function () {
 		this.each(function () {
-			var d = a(this), c = d.html(), b = 0;
+			var d = a(this),
+				c = d.html(),
+				b = 0;
 			d.html("");
 			var e = setInterval(function () {
 				var f = c.substr(b, 1);
@@ -109,9 +113,9 @@ function timeElapse(c) {
 		Interval = "0" + Interval
 	}
 
-	var duration = '<span class="digit">' + Days + '</span> days <span class="digit">' + 
-	hour + '</span> hours <span class="digit">' + 
-	minute + '</span> minutes <span class="digit">' + Interval + "</span> seconds";
+	var duration = '<span class="digit">' + Days + '</span> days <span class="digit">' +
+		hour + '</span> hours <span class="digit">' +
+		minute + '</span> minutes <span class="digit">' + Interval + "</span> seconds";
 	$("#elapseClock").html(duration)
 }
 
