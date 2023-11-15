@@ -2,30 +2,27 @@
  * @Author: YFFS-2023 2651832051@qq.com
  * @Date: 2023-11-15 09:19:22
  * @LastEditors: YFFS-2023 2651832051@qq.com
- * @LastEditTime: 2023-11-15 09:43:19
+ * @LastEditTime: 2023-11-15 14:57:43
  * @FilePath: \YFFS-Github\YFFS-2023.github.io\test\index.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Markdown to HTML</title>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Markdown解析示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        function loadMarkdownFile() {
+            fetch('example.md')
+                .then(response => response.text())
+                .then(markdown => {
+                    const html = marked(markdown);
+                    document.getElementById('markdown-content').innerHTML = html;
+                });
+        }
+    </script>
 </head>
-<body>
-  <div id="markdown-content"></div>
-
-  <script>
-    fetch('example.md')
-      .then(response => response.text())
-      .then(text => {
-        const markdownContent = document.getElementById('markdown-content');
-        markdownContent.innerHTML = marked(text);
-      })
-      .catch(error => {
-        console.error('Error fetching the file:', error);
-      });
-  </script>
+<body onload="loadMarkdownFile()">
+    <div id="markdown-content"></div>
 </body>
 </html>
