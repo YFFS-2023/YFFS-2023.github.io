@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --heart_size: 200px;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    /* 阴影颜色 */
+}
+
+@font-face {
+    font-family: "Chinese";
+    src: url("./Chinese.ttf");
+}
+
+* {
+    font-family: 'Muli', sans-serif;
+}
+
+html {
+    min-width: 1200px;
+    min-height: 526px;
+    max-width: 1430px;
+    max-height: 630px;
+}
+
+body {
+    --navWidth: 672px;
+    background-color: #f8edf0;
+}
+
+nav {
+    margin: 20px auto;
+    position: relative;
+    width: var(--navWidth);
+    height: 50px;
+    background-color: pink;
+    border-radius: 8px;
+    font-size: 0;
+    box-shadow: 2px 2px 2px #000;
+}
+
+nav a {
+    width: calc(var(--navWidth) / 4);
+    height: 100%;
+    line-height: 50px;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 550;
+    color: #bc6790;
+    cursor: pointer;
+}
+
+a:nth-child(1) {
+    color: #F9D3E3;
+}
+
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all 1s ease 0s;
+    border-radius: 8px;
+    width: calc(var(--navWidth) / 4);
+    left: 0;
+    background-color: #A76283;
+}
+
+a:hover {
+    color: #F9D3E3;
+    transition: color 1.5s;
+}
+
+a:nth-child(1):hover~.animation {
+    left: 0;
+}
+
+a:nth-child(2):hover~.animation {
+    left: calc(var(--navWidth) / 4);
+}
+
+a:nth-child(3):hover~.animation {
+    left: calc(var(--navWidth) / 2);
+}
+
+a:nth-child(4):hover~.animation {
+    left: calc(var(--navWidth) / 4 * 3);
+}
+
+.introduction {
+    height: 400px;
+    width: 100%;
+    min-width: none;
+    display: flex;
+}
+
+.intro-content {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Summary-Content {
+    flex: 2;
+    font-family: "Chinese";
+}
+
+.avatar {
+    flex: 1;
+    overflow: hidden;
+}
+
+.beating-heart {
+    flex: 2;
+}
+
+.timer {
+    height: 120px;
+    width: 100%;
+    padding-top: 10px;
+    text-align: center;
+    font-family: "Chinese";
+    font-size: 70px;
+    color: #bc6790;
+}
+
+#timer {
+    color: #bc6790;
+}
+
+.number {
+    font-family: "Chinese";
+    color: rgb(254, 129, 154);
+    font-size: 70px;
+}
+
+.avatar-image {
+    --avatar_size: 100px;
+    height: var(--avatar_size);
+    width: var(--avatar_size);
+    border-radius: 50%;
+}
+
+.beating-heart {
+    font-size: 80px;
+    justify-content: center;
+}
+
+
+.heart {
+    margin-top: 5px;
+    width: var(--heart_size);
+    height: var(--heart_size);
+    position: absolute;
+    box-shadow: 0 0 40px #d5093c;
+    animation: beat .8s ease infinite normal;
+    background-color: #d5093c;
+    /* background: linear-gradient(-90deg, #F50A45 0%, #d5093c 40%); */
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    width: var(--heart_size);
+    height: var(--heart_size);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 40px #d5093c;
+    background: linear-gradient(180deg, #F50A45 0%, #d5093c 40%);
+}
+
+.heart:before {
+    top: calc(-1 * var(--heart_size) / 2);
+    left: 0;
+    z-index: 1;
+}
+
+.heart:after {
+    top: 0;
+    left: calc(var(--heart_size) / 2);
+}
+
+@keyframes heartBeat {
+    0% {
+        --heart_size: 200px
+    }
+
+    100% {
+        --heart_size: 190px
+    }
+}
+
+@keyframes beat {
+
+
+    0% {
+        transform: scale(1) rotate(-45deg);
+        box-shadow: 0 0 40px #d5093c;
+    }
+
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+        box-shadow: 0 0 70px #d5093c;
+    }
+
+    100% {
+        transform: scale(1) rotate(-45deg);
+        box-shadow: 0 0 40px #d5093c;
+        ;
+    }
+}
