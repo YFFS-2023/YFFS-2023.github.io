@@ -10,10 +10,10 @@
     font-family: "Chinese";
     src: url("./Chinese.ttf");
 }
-/* 
-* {
-    font-family: 'Muli', sans-serif;
-} */
+
+*{
+    user-select: none;
+}
 
 html {
     min-width: 1200px;
