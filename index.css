@@ -18,7 +18,7 @@
 html {
     min-width: 1200px;
     min-height: 526px;
-    max-width: 1430px;
+    max-width: 1520px;
     max-height: 630px;
 }
 
@@ -227,3 +227,22 @@ a:nth-child(4):hover~.animation {
     left: 50px;
     padding: 20px;
 }
+
+.lyric{
+    height: 44px;
+    position: fixed;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-family: "Chinese";
+    color: rgb(244, 139, 157);
+    transition: opacity 0.5s ease-in-out; /* 添加过渡效果 */
+    opacity: 1; /* 初始时可见 */
+}
+
+.lyric.hidden{
+    opacity: 0;
+}
+
+
