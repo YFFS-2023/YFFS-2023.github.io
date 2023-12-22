@@ -37,7 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
             var formattedText = text.replace(/\d+/g, '<span class="number">$&</span>')
             showTime.innerHTML = formattedText;
         }
-
-
-    }, 1000)
+    }, 1000);
 });
+
+function playMusic(){
+    var audio = document.getElementById('music');
+    if(audio.paused){
+        audio.play();
+    }else{
+        audio.pause();
+    }
+}

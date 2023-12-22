@@ -216,3 +216,14 @@ a:nth-child(4):hover~.animation {
         ;
     }
 }
+
+.player-img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    padding: 20px;
+}
