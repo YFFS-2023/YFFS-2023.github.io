@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); */
 
 :root {
     --heart_size: 200px;
@@ -10,10 +10,10 @@
     font-family: "Chinese";
     src: url("./Chinese.ttf");
 }
-
+/* 
 * {
     font-family: 'Muli', sans-serif;
-}
+} */
 
 html {
     min-width: 1200px;
