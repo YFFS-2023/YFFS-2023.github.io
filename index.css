@@ -230,7 +230,7 @@ a:nth-child(4):hover~.animation {
 
 .lyric{
     height: 44px;
-    position: fixed;
+    position: absolute;
     top: 450px;
     left: 50%;
     transform: translateX(-50%);
